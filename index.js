@@ -41,7 +41,7 @@ function init(){
 }
 init();
 function boek(args, msg){
-	if(args[0] == "frans" || args[0] == "fa" || args[0] == "fr" ) msg.channel.send('*mblink*');
+	if(args[0] == "frans" || args[0] == "fa" || args[0] == "fr" ) msg.channel.send('Leerboek: http://v3dbot.000webhostapp.com/v3d?url=frvlb\nWerkboek A: http://v3dbot.000webhostapp.com/v3d?url=frvwba\nWerkboek B: http://v3dbot.000webhostapp.com/v3d?url=frvwbb');
 	else if(args[0] == "scheikunde") msg.channel.send('*mblink*');
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
