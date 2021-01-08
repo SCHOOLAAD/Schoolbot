@@ -24,9 +24,10 @@ function goToSleep(){
 function init(){
 	client = new Discord.Client();
 	client.on('message', message => {
+		console.log(`msg`);
 		if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 	
-		let args = message.content.slice(prefix.length).trim().split(/ +/);
+		let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
 		const command = args.shift().toLowerCase();
 		args[0] = args[0].toLowerCase();
 		if (command == 'boek') {
@@ -46,7 +47,7 @@ function boek(args, msg){
 }
 
 function ant(args, msg){
-	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=natuurkunde');
+	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=nkantw');
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
 
