@@ -30,7 +30,7 @@ function boek(args, msg){
 }
 
 function ant(args, msg){
-	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] = 'ns') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=natuurkunde');
+	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=natuurkunde');
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
 
