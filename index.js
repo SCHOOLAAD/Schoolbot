@@ -2,12 +2,24 @@ require('dotenv').config();
 const express = require("express");
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
+let checker = setInterval(testtime, 300000);
 app.get(`/wake`, wake);
 client.once('ready', () => {
 	console.log('Ready!');
 });
+
+function testtime(){
+	const date = new Date();
+	if(date.getUTCHours()==22&&date.getUTCMinutes() >= 55) goToSleep();
+}
+
+function goToSleep(){
+	clearInterval(checker);
+	client.destroy();
+}
 
 client.on('message', message => {
 	if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
@@ -34,7 +46,7 @@ function ant(args, msg){
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
 
-client.login(token);
+client.login(process.env.TOKEN);
 
 function wake(req, res){
 	res.send("hi");
