@@ -1,0 +1,24 @@
+{
+  "name": "schoolbot",
+  "version": "0.0.1",
+  "description": "ye don't",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SCHOOLAAD/Schoolbot.git"
+  },
+  "author": "Adriaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SCHOOLAAD/Schoolbot/issues"
+  },
+  "homepage": "https://github.com/SCHOOLAAD/Schoolbot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
