@@ -29,7 +29,7 @@ function init(){
 	
 		let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
 		const command = args.shift().toLowerCase();
-		args[0] = args[0].toLowerCase();
+		if (args[0]) args[0] = args[0].toLowerCase();
 		if (command == 'boek') {
 			boek(args, message);
 		} else if (command == 'antwoorden') {
