@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const Discord = require('discord.js');
 let client = new Discord.Client();
-
+let on;
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
 app.get(`/wake`, wake);
@@ -14,6 +14,7 @@ client.once('ready', () => {
 
 function goToSleep(req, res){
 	client.destroy();
+	let on = false;
 	res.send(`bye`);
 }
 
@@ -34,6 +35,7 @@ function init(){
 		}
 		// other commands...
 	});
+	on = true;
 }
 init();
 function boek(args, msg){
