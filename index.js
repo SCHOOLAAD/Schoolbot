@@ -13,7 +13,7 @@ client.once('ready', () => {
 
 
 function goToSleep(req, res){
-	client.destroy();
+	if(on=true)client.destroy();
 	let on = false;
 	res.send(`bye`);
 }
@@ -52,6 +52,6 @@ function ant(args, msg){
 client.login(process.env.TOKEN);
 
 function wake(req, res){
-	init();
+	if(on=false)init();
 	res.send("hi");
 }
