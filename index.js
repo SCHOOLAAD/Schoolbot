@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const Discord = require('discord.js');
-let client = new Discord.Client();
+let client;
 let on;
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
@@ -27,6 +27,7 @@ function init(){
 		// other commands...
 	});
 	on = true;
+	client.login(process.env.TOKEN);
 }
 init();
 function boek(args, msg){
@@ -39,8 +40,6 @@ function ant(args, msg){
 	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=nkantw');
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
-
-client.login(process.env.TOKEN);
 
 app.get(`/wake`, wake);
 app.get(`/sleep`, goToSleep);
