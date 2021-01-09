@@ -6,10 +6,6 @@ let on;
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
 
-client.once('ready', () => {
-	console.log('Ready!');
-});
-
 function init(){
 	client = new Discord.Client();
 	client.on('message', message => {
@@ -28,6 +24,9 @@ function init(){
 	});
 	on = true;
 	client.login(process.env.TOKEN);
+	client.once('ready', () => {
+		console.log('Ready!');
+	});
 }
 init();
 function boek(args, msg){
