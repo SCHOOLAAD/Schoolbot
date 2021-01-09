@@ -21,6 +21,8 @@ function init(){
 			ant(args, message);
 		} else if (c == 'malmberg' || c == 'ml') {
 			message.channel.send('https://v3dbot.000webhostapp.com/malmberg/');
+		} else if (c == 'help' || c == '?' || c == 'h') {
+			help(args, message);
 		}
 		// other commands...
 	});
@@ -28,6 +30,7 @@ function init(){
 	client.once('ready', () => {
 		console.log('Ready!');
 	});
+	client.login(process.env.TOKEN);
 
 }
 init();
@@ -44,8 +47,7 @@ function ant(args, msg){
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
 
-client.login(process.env.TOKEN);
-
+function help(args, msg){}
 app.get(`/wake`, wake);
 app.get(`/sleep`, goToSleep);
 
@@ -59,4 +61,3 @@ function goToSleep(req, res){
 	on = false;
 	res.send(`bye`);
 }
-
