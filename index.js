@@ -35,7 +35,7 @@ function boek(args, msg){
 	if(args[0] == "frans" || args[0] == "fa" || args[0] == "fr" ) msg.channel.send('Leerboek: http://v3dbot.000webhostapp.com/v3d?url=frvlb\nWerkboek A: http://v3dbot.000webhostapp.com/v3d?url=frvwba\nWerkboek B: http://v3dbot.000webhostapp.com/v3d?url=frvwbb');
 	else if(args[0] == "scheikunde" || args[0] == "sc" || args[0] == "sk") msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=skvlb');
 	else if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns' || args[0] == 'nk') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=navg');
-	else if(args[0] == "engels" || args[0] == 'en' || args[0] == 'eng') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=navg');
+	else if(args[0] == "engels" || args[0] == 'en' || args[0] == 'eng') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=envg');
 	else msg.channel.send('Ik weet niet wat je bedoelt?/nIk ken Engels (en, eng)/nIk ken natuurkunde (an, nk, ns)\nIk ken scheikunde (sk, sc)');
 }
 
