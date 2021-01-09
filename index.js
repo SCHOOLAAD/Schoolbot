@@ -13,7 +13,6 @@ client.once('ready', () => {
 function init(){
 	client = new Discord.Client();
 	client.on('message', message => {
-		console.log(`msg`);
 		if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 	
 		let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
