@@ -5,19 +5,10 @@ let client = new Discord.Client();
 let on;
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
-app.get(`/wake`, wake);
-app.get(`/sleep`, goToSleep);
+
 client.once('ready', () => {
 	console.log('Ready!');
 });
-
-
-function goToSleep(req, res){
-	if(on=true)client.destroy();
-	let on = false;
-	res.send(`bye`);
-}
-
 
 function init(){
 	client = new Discord.Client();
@@ -51,7 +42,17 @@ function ant(args, msg){
 
 client.login(process.env.TOKEN);
 
+app.get(`/wake`, wake);
+app.get(`/sleep`, goToSleep);
+
 function wake(req, res){
 	if(on=false)init();
 	res.send("hi");
 }
+
+function goToSleep(req, res){
+	if(on=true)client.destroy();
+	let on = false;
+	res.send(`bye`);
+}
+
