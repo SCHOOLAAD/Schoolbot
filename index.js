@@ -13,6 +13,7 @@ client.once('ready', () => {
 function init(){
 	client = new Discord.Client();
 	client.on('message', message => {
+		console.log(`msg`);
 		if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 	
 		let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
@@ -35,7 +36,7 @@ function boek(args, msg){
 	else if(args[0] == "scheikunde" || args[0] == "sc" || args[0] == "sk") msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=skvlb');
 	else if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns' || args[0] == 'nk') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=navg');
 	else if(args[0] == "engels" || args[0] == 'en' || args[0] == 'eng') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=envg');
-	else msg.channel.send('Ik weet niet wat je bedoelt?/nIk ken Engels (en, eng)/nIk ken natuurkunde (an, nk, ns)\nIk ken scheikunde (sk, sc)');
+	else msg.channel.send('Ik weet niet wat je bedoelt?\nIk ken Engels (en, eng)\nIk ken natuurkunde (na, nk, ns)\nIk ken scheikunde (sk, sc)');
 }
 
 function ant(args, msg){
