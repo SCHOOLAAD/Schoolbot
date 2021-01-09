@@ -46,13 +46,13 @@ app.get(`/wake`, wake);
 app.get(`/sleep`, goToSleep);
 
 function wake(req, res){
-	if(on=false)init();
+	if(on==false)init();
 	res.send("hi");
 }
 
 function goToSleep(req, res){
-	if(on=true)client.destroy();
-	let on = false;
+	if(on==true)client.destroy();
+	on = false;
 	res.send(`bye`);
 }
 
