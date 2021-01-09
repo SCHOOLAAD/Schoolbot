@@ -39,7 +39,7 @@ function boek(args, msg){
 	else if(args[0] == "scheikunde" || args[0] == "sc" || args[0] == "sk") msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=skvlb');
 	else if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns' || args[0] == 'nk') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=navg');
 	else if(args[0] == "engels" || args[0] == 'en' || args[0] == 'eng') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=envg');
-	else msg.channel.send('Ik weet niet wat je bedoelt?\nIk ken Engels (en, eng)\nIk ken natuurkunde (na, nk, ns)\nIk ken scheikunde (sk, sc)\n En ik ken Frans (fr, fa)');
+	else msg.channel.send('Ik weet niet wat je bedoelt?\nIk ken Engels (en, eng)\nIk ken natuurkunde (na, nk, ns)\nIk ken scheikunde (sk, sc)\nEn ik ken Frans (fr, fa)');
 }
 
 function ant(args, msg){
@@ -48,16 +48,21 @@ function ant(args, msg){
 }
 
 function help(args, msg){}
-app.get(`/wake`, wake);
-app.get(`/sleep`, goToSleep);
+app.get(`/keep/`, keep);
+app.get(`/wake/:secret`, wake);
+app.get(`/sleep/:secret`, goToSleep);
 
 function wake(req, res){
-	if(on==false)init();
+	if(on==false && req.params[0] == process.env.SECRET)init();
+	res.send("hi");
+}
+
+function keep(req, res){
 	res.send("hi");
 }
 
 function goToSleep(req, res){
-	if(on==true)client.destroy();
+	if(on==true && req.params[0] == process.env.SECRET)client.destroy();
 	on = false;
 	res.send(`bye`);
 }
