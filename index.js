@@ -6,18 +6,15 @@ let client = new Discord.Client();
 let app = express();
 let server = app.listen(process.env.PORT, console.log(`listening to port `+process.env.PORT));
 app.get(`/wake`, wake);
+app.get(`/sleep`, goToSleep);
 client.once('ready', () => {
 	console.log('Ready!');
 });
 
-function testtime(){
-	const date = new Date();
-	if(date.getUTCHours()==22&&date.getUTCMinutes() >= 55) goToSleep();
-}
 
-function goToSleep(){
-	clearInterval(checker);
+function goToSleep(req, res){
 	client.destroy();
+	res.send(`bye`);
 }
 
 
@@ -37,7 +34,6 @@ function init(){
 		}
 		// other commands...
 	});
-	checker = setInterval(testtime, 300000);
 }
 init();
 function boek(args, msg){
@@ -54,6 +50,6 @@ function ant(args, msg){
 client.login(process.env.TOKEN);
 
 function wake(req, res){
-	res.send("hi");
 	init();
+	res.send("hi");
 }
