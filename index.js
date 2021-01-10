@@ -44,25 +44,15 @@ function boek(args, msg){
 
 function ant(args, msg){
 	if(args[0] == "natuurkunde" || args[0] == 'na' || args[0] == 'ns' || args[0] == 'nk') msg.channel.send('http://v3dbot.000webhostapp.com/v3d?url=nkantw');
+	else if(args[0] == "aardrijkskunde" || args[0] == 'geo' || args[0] == 'ak') msg.channel.send('H1: http://v3dbot.000webhostapp.com/v3d?url=akantw2\nH3§1: http://v3dbot.000webhostapp.com/v3d?url=akantw31\nH3§2: http://v3dbot.000webhostapp.com/v3d?url=akantw32\nH3§3: http://v3dbot.000webhostapp.com/v3d?url=akantw33\nH3§4: http://v3dbot.000webhostapp.com/v3d?url=akantw34\nH3§5: http://v3dbot.000webhostapp.com/v3d?url=akantw35\nH3§Zoom in: http://v3dbot.000webhostapp.com/v3d?url=akantw3z\nH3§Finale: http://v3dbot.000webhostapp.com/v3d?url=akantw3f\nH5: http://v3dbot.000webhostapp.com/v3d?url=akantw5');
 	else msg.channel.send('Ik weet niet wat je bedoelt?');
 }
 
-function help(args, msg){}
-app.get(`/keep/`, keep);
-app.get(`/wake/:secret`, wake);
-app.get(`/sleep/:secret`, goToSleep);
-
-function wake(req, res){
-	if(on==false && req.params[0] == process.env.SECRET)init();
-	res.send("hi");
+function help(args, msg){
+	
 }
+app.get(`/keep/`, keep);
 
 function keep(req, res){
 	res.send("hi");
-}
-
-function goToSleep(req, res){
-	if(on==true && req.params[0] == process.env.SECRET)client.destroy();
-	on = false;
-	res.send(`bye`);
 }
