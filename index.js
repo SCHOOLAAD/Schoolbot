@@ -62,6 +62,6 @@ function keep(req, res){
 function pl(args, msg){
 	if(args[0] == "thijs" || args[0] == 'thijsmuziek') msg.channel.send('https://open.spotify.com/playlist/7BF0UCW0fLmLV9sOB0PSLo');
 	else if(args[0] == "throwbacks" || args[0] == 'throwback' || args[0] == 'adriaan') msg.channel.send('https://open.spotify.com/playlist/6gYs81b1TVlI3BzQuspNv8');
-	else if(args[0] == "shit" || args[0] == 'slecht' || (args[0] == 'lif' && args[1] == 'laf' && (args[2] == 'lof' || args[2] == 'lofjes'))) msg.channel.send('https://open.spotify.com/playlist/6gYs81b1TVlI3BzQuspNv8');
+	else if(args[0] == "shit" || args[0] == 'slecht' || (args[0] == 'lif' && args[1] == 'laf' && (args[2] == 'lof' || args[2] == 'lofjes'))) msg.channel.send('https://open.spotify.com/playlist/0ENQBXOg2YrVnKszsVva4A');
 	else msg.channel.send('Ik weet niet wat je bedoelt?\nIk ken thijsmuziek (thijs)\nIk ken throwbacks (adriaan)\nEn ik ken slechte muziek (shit, slecht, lif laf lof(jes))');
 }
