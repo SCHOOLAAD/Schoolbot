@@ -51,7 +51,7 @@ function ant(args, msg){
 }
 
 function help(args, msg){
-	msg.channel.send('Ik heb deze kommando\'s:\n`%boek: geeft een link naar het boek(of de boeken) van een vak\n%antwoorden (antwoord, antw): geeft een link naar de antwoorden van een vak\n%help (h, ?): laat dit bericht zien\n%malmberg (ml): geeft een link naar alle publitas publicaties van Malmberg\n%playlist (pl): geeft een link naar een spotify playlist zodat je hem niet hoeft te onthouden`');
+	msg.channel.send('Ik heb deze kommando\'s:\n```%boek: geeft een link naar het boek(of de boeken) van een vak\n%antwoorden (antwoord, antw): geeft een link naar de antwoorden van een vak\n%help (h, ?): laat dit bericht zien\n%malmberg (ml): geeft een link naar alle publitas publicaties van Malmberg\n%playlist (pl): geeft een link naar een spotify playlist zodat je hem niet hoeft te onthouden```');
 }
 app.get(`/keep/`, keep);
 
